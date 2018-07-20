@@ -1,0 +1,2 @@
+# goblog
+blog
