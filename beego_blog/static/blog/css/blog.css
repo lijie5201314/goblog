@@ -1,0 +1,170 @@
+ul.blog-types {
+    list-style-type: none;
+}
+
+div.blog h3 {
+    margin-top: 0.5em;
+}
+
+div.blog:not(:last-child){
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
+}
+
+div.blog p.blog-info {
+    margin-bottom: 0;
+}
+
+
+
+ul.blog-info-description {
+    list-style-type: none;
+    margin-bottom: 1em;
+}
+
+ul.blog-info-description li {
+    display: inline-block;
+    margin-right: 1em;
+}
+div.blog-content {
+    text-indent: 2em;
+    margin-bottom: 2em;
+}
+div.paginator {
+    text-align: center;
+}
+
+div.blog-more {
+    margin-top: 1em;
+}
+
+div.comment-area {
+    margin-top: 2em;
+}
+h3.comment-area-title {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.4em;
+}
+
+div.django-ckeditor-widget {
+    width: 100%;
+}
+
+
+div.reply {
+    margin-left: 2em;
+}
+
+div.comment {
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+div#reply_content_container {
+    border: 1px solid #d1d1d1;
+    border-bottom: none;
+    background-color: #f8f8f8;
+    overflow: hidden;
+    padding: 1em 1em 0.5em;
+}
+
+p#reply_title {
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 0.5em;
+}
+
+div.like {
+    color: #337ab7;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.5em 0.3em;
+}
+
+div.like .active {
+    color: #f22;
+}
+.header-banner{ text-align: center; min-height: 257px; position: relative; margin-top: -30px; padding-top: 75px; margin-bottom: 20px; background-color: #4F5893;}
+.header-banner h1{ font-size: 3em; color: #fff; margin-bottom: 12px;}
+.header-banner p{ font-weight: 300; line-height: 1.4; font-size: 1.5em; color:#B9BFE4; margin: 5px 0;}
+.header-banner .total_num{ display: inline-block; margin-left: 0.5em; font-size: 80%; padding: 0.2em 0.3em 0.1em; background-color: #fff; color: #555; font-weight: bold; border-radius: 4px;}
+
+@media (min-width: 1200px){
+    .header-banner{
+        min-height: 300px;
+        padding-top: 90px;
+    }
+}
+
+/*博文页面*/
+.blog_header{ overflow: hidden; padding: 1em 0em 0em 1em;}
+.blog_header h3{ margin-top:10px;}
+.blog_header h3{ color: #0d56a6;}
+.blog_header li{ float: left; padding-right: 0.7em; font-size: small;}
+
+.blog_content{ padding: 1em 1em 0;}
+.blog_content p{ text-indent: 2em; margin: 5px 0; line-height: 1.6; font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}
+.blog_content .badge{ text-indent: 0;}
+.blog_content img{ display:block; height:auto; max-width:90%; margin-left:2em;}
+
+.blog_list_footer{ text-align: center;}
+.blog_list_footer .blog_footer_tip{ display: block; width: 100%; padding:0.5em 0 0 0; margin-bottom: -0.5em; font-size: 1em;}
+
+
+/*随机推荐*/
+.side-list h4{ padding-top: 0.8em; padding-bottom: 0.5em; border-bottom: 1px #ccc solid;}
+.side-list li{ margin-bottom: 0.2em; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+
+/*侧边栏宽度兼容*/
+@media (max-width: 991px){
+    .col-xs-12{padding: 0;} .side-list{padding: 0 1em 0 1.5em;}
+}
+
+.blog-border{ border: 1px #ccc solid; border-radius: 6px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

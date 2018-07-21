@@ -1,0 +1,115 @@
+{{template "blog/head.html" .}}
+{{template "blog/head2.html" .}}
+
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+<div class="panel panel-default">
+    <div class="panel-heading">博客列表</div>
+<div class="panel-body">
+{{range .blogs}}
+<div class="blog">
+    <h3><a href="/blogdetail/{{.id}}" target="_blank">{{ .title }}</a></h3>
+<p class="blog-info">
+    <span class="glyphicon glyphicon-tag"></span> <a href="/" target="_blank">{{ .name }}</a>&nbsp;&nbsp;
+    <span class="glyphicon glyphicon-time"></span> {{ .created }}&nbsp;&nbsp;
+    作者{{.author}}
+</p>
+<p>{{.content}}</p>
+</div>
+{{else}}
+    <div class="blog">
+        <h3>--暂无博客，敬请期待</h3>
+    </div>
+{{end}}
+
+</div>
+</div>
+{{/*<div class="paginator">*/}}
+{{/*<ul class="pagination">*/}}
+    {{/*{# 上一页 #}*/}}
+{{/*<li>*/}}
+    {{/*{% if page_of_blogs.has_previous %}*/}}
+        {{/*<a href="?page={{ page_of_blogs.previous_page_number }}" aria-label="Previous">*/}}
+    {{/*<span aria-hidden="true">&laquo;</span>*/}}
+{{/*</a>*/}}
+    {{/*{% else %}*/}}
+    {{/*<span aria-hidden="true">&laquo;</span>*/}}
+    {{/*{% endif %}*/}}
+
+{{/*</li>*/}}
+    {{/*{# 全部分页 #}*/}}
+    {{/*{% for page_num in page_range %}*/}}
+    {{/*if page_num == page_of_blogs.number %}*/}}
+{{/*<li class="active"><span>{{ page_num }}</span></li>*/}}
+    {{/*{% else %}*/}}
+    {{/*{% if page_num == '...' %}*/}}
+{{/*<li><span>{{ page_num }}</span></li>*/}}
+    {{/*{% else %}*/}}
+{{/*<li><a href="?page={{ page_num }}">{{ page_num }}</a></li>*/}}
+    {{/*{% endif %}*/}}
+
+    {{/*{% endif %}*/}}
+    {{/*{% endfor %}*/}}
+    {{/*{# 下一页 #}*/}}
+{{/*<li>*/}}
+    {{/*if page_of_blogs.has_next %}*/}}
+        {{/*<a href="?page={{ page_of_blogs.next_page_number }}" aria-label="Next">*/}}
+    {{/*<span aria-hidden="true">&raquo;</span>*/}}
+{{/*</a>*/}}
+    {{/*{% else %}*/}}
+    {{/*<span aria-hidden="true">&raquo;</span>*/}}
+    {{/*{% endif %}*/}}
+{{/*</li>*/}}
+{{/*</ul>*/}}
+{{/*<p>*/}}
+    {{/*共有{{ page_of_blogs.paginator.count }}篇博客，*/}}
+    {{/*当前第{{ page_of_blogs.number }}页，*/}}
+    {{/*一共{{ page_of_blogs.paginator.num_pages }}页，*/}}
+{{/*</p>*/}}
+{{/*</div>*/}}
+</div>
+<div class="hidden-xs col-sm-4 col-md-3 col-lg-3">
+<div class="panel panel-default">
+    <div class="panel-heading">博客分类</div>
+<div class="panel-body">
+
+<ul class="blog-types">
+{{range .types}}
+    <li>
+        <a href="/blogtypelist/{{.name}}">
+        {{.name}}({{.count}})
+        </a>
+    </li>
+{{else}}
+    <li>暂无博客分类</li>
+{{end}}
+
+</ul>
+</div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">日期归档</div>
+<div class="panel-body">
+<ul>
+{{range .dates}}
+<li>
+<a href="/datetypelist">
+{{ .date }}({{ .count }})
+</a>
+</li>
+{{else}}
+    <li>暂无博客分类</li>
+{{end}}
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{{template "blog/foot.html" .}}
+
+</body>
+</html>

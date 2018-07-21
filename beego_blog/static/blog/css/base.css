@@ -1,0 +1,23 @@
+* {
+margin: 0;
+padding: 0;
+}
+body {
+    margin-top: 70px!important;
+}
+ul li{
+    list-style-type: none!important;
+}
+
+ul.navbar-right {
+    margin-right: 0;
+}
+
+
+
+
+/*页尾*/
+.page-bottom{ width:100%; clear:both; background: #e7e7e7; margin-top: 2.5em; padding: 1em 0 0; color: #777;}
+.page-bottom-abs{ position:absolute; bottom:0;}/*在js中 还没写*/
+.page-bottom .title{ color: #424242; font-weight: bold; border-bottom: 1px solid #aaa; padding-bottom: 7px; margin-bottom: 1em; margin-top: 1em;}
+.page-bottom .copyright{ text-align: center; padding: 0.5em 0; margin-top: 1.5em; background: beige; color: green;}

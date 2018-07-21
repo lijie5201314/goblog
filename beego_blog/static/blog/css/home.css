@@ -1,0 +1,53 @@
+h3.home-content {
+    font-size: 222%;
+    text-align: center;
+    margin-top: 4em;
+    margin-bottom: 2em;
+}
+div#container {
+    margin: 0 auto;
+    height: 20em;
+    min-width: 40em;
+    max-width: 30em;
+}
+
+.header-banner{ text-align: center; min-height: 257px; position: relative; margin-top: -30px; padding-top: 75px; margin-bottom: 20px; background-color: #4F5893;}
+.header-banner h1{ font-size: 3em; color: #fff; margin-bottom: 12px;}
+.header-banner p{ font-weight: 300; line-height: 1.4; font-size: 1.5em; color:#B9BFE4; margin: 5px 0;}
+.header-banner .total_num{ display: inline-block; margin-left: 0.5em; font-size: 80%; padding: 0.2em 0.3em 0.1em; background-color: #fff; color: #555; font-weight: bold; border-radius: 4px;}
+
+@media (min-width: 1200px){
+    .header-banner{
+        min-height: 300px;
+        padding-top: 90px;
+    }
+}
+
+/*阅读排行*/
+.read-content-item{ padding-top: 1em; white-space:nowrap;}
+.read-content-item ul{ padding-left: 2em;}
+.read-content-item li{ margin-bottom: 4px; color:#337ab7;}
+.read-content-item .read-num{ width: 2em; display: inline-block;}
+
+/*阅读趋势图*/
+.read-chart #chart_text{ text-indent: 16px; text-align: center;}
+
+@media (max-width: 767px){
+    .read-nav{ font-size: 85%;}
+}
+/*首页大模块*/
+.content-item{ margin-bottom: 4em;}
+.content-item-title{ color: #222;}
+.content-item-title .glyphicon{ float: left; margin-right: 8px;}
+.content-more{ font-size: 0.6em; margin-left: 1em;}
+
+/*首页小模块*/
+.home-block{ /*border: 1px #ccc solid;*/ border-radius: 6px; padding: 16px 1em 5px 1.5em; margin-bottom: 1em;}
+.home-block-title{ border-bottom: 1px #ccc solid; padding-bottom: 10px; font-weight: bold;}
+.home-block .list a{ color: #333;}
+.home-block .list li{ margin-bottom: 1px; white-space:nowrap;  overflow:hidden; text-overflow:ellipsis;}
+.home-block .read-num{ width: 2em; display: inline-block;}
+
+
+
+

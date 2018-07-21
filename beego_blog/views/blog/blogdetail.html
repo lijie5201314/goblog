@@ -1,0 +1,172 @@
+{{template "blog/head.html" .}}
+
+<div class="container">
+<div class="col-md-9 col-xs-12">
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<div class="blog_header">
+{{range .blogsdetail}}
+    <h3>{{ .title }}</h3>
+<ul>
+<li>发布时间：{{ .created }}</li>
+<li>作者：{{ .author }}</li>
+
+</ul>
+    <span class="clearfix"></span>
+<ul>
+<li>分类标签：
+<a href="#">{{ .type_name }}</a>
+</li>
+{{/*<li>阅读：({{ blog.get_read_num }})</li>*/}}
+    {{/*<li>评论：({% get_comment_count blog %})</li>*/}}
+</ul>
+</div>
+</div>
+<div class="panel-body">
+<div class="blog_content">
+<p>{{ .content }}</p>
+    {{end}}
+
+
+        {{/*<div class="like" onclick="likeChange(this, '{% get_content_type blog %}', {{ blog.pk }})">*/}}
+    {{/*<span class="glyphicon glyphicon-thumbs-up {% get_like_status blog %}"></span>*/}}
+    {{/*<span class="liked-num">{% get_like_count blog %}</span>*/}}
+    {{/*<span>喜欢</span>*/}}
+{{/*</div>*/}}
+<p>
+{{range .preblog}}
+<a href="/blogdetail/{{.id}}">上一篇：{{ .title }}</a>
+{{else}}
+    亲，已经没有更多博客啦
+{{end}}
+</p>
+<p>
+{{range .nextblog}}
+<a href="/blogdetail/{{.id}}">下一篇：{{ .title }}</a>
+{{else}}
+    亲，已经没有更多博客啦
+{{end}}
+</p>
+
+</div>
+</div>
+</div>
+
+{{/*<div class="panel panel-default">*/}}
+{{/*<div class="panel-heading">*/}}
+{{/*<div class="comment-area">*/}}
+    {{/*<h3 class="comment-area-title">提交评论</h3>*/}}
+    {{/*{% if user.is_authenticated %}*/}}
+{{/*<form id="comment_form" action="{% url 'comment:update_comment' %}" method="post" style="overflow:hidden">*/}}
+    {{/*csrf_token %}*/}}
+{{/*<label for="comment_text">{{ user.get_nickname_or_username }}，欢迎评论~~</label>*/}}
+    {{/*<div id="reply_content_container" style="display: none";>*/}}
+        {{/*<p id="reply_title">回复</p>*/}}
+        {{/*<div id="reply_content"></div>*/}}
+    {{/*</div>*/}}
+    {{/*{% get_comment_form blog as comment_form %}*/}}
+    {{/*{% for field in comment_form %}*/}}
+{{/*{{ field }}*/}}
+    {{/*{% endfor %}*/}}
+    {{/*<span id="comment_error" class="text-danger pull-left"></span>*/}}
+    {{/*<input type="submit" value="评论" class="btn btn-primary pull-right">*/}}
+{{/*</form>*/}}
+    {{/*{% else %}*/}}
+    {{/*您尚未登录，登陆之后方可评论*/}}
+        {{/*<a class="btn btn-primary" href="{% url 'user:login' %}?from={{ request.get_full_path }}">登录</a>*/}}
+    {{/*<span>or</span>*/}}
+        {{/*<a class="btn btn-danger" href="{% url 'user:register' %}?from={{ request.get_full_path }}">注册</a>*/}}
+    {{/*{% endif %}*/}}
+{{/*</div>*/}}
+{{/*</div>*/}}
+{{/*</div>*/}}
+    <!--评论列表-->
+{{/*<div class="panel panel-default">*/}}
+    {{/*<div class="panel-heading">*/}}
+        {{/*<h4>评论列表</h4>*/}}
+    {{/*</div>*/}}
+{{/*<div id="comments_list" class="panel-body">*/}}
+{{/*<div class="comment-area">*/}}
+    {{/*{#                    <h3 class="comment-area-title">评论列表</h3>#}*/}}
+{{/*<div id="comment_list">*/}}
+    {{/*{% get_comment_list blog as comments %}*/}}
+    {{/*{% for comment in comments %}*/}}
+        {{/*<div id="root_{{ comment.pk }}" class="comment">*/}}
+{{/*<span>{{ comment.user.get_nickname_or_username }}</span>*/}}
+{{/*<span>({{ comment.comment_time|date:'Y-m-d H:i:s' }})</span>*/}}
+        {{/*<div id="comment_{{ comment.pk }}">{{ comment.text|safe }}</div>*/}}
+        {{/*<div class="like" onclick="likeChange(this, '{% get_content_type comment %}', {{ comment.pk }})">*/}}
+    {{/*<span class="glyphicon glyphicon-thumbs-up {% get_like_status comment %}"></span>*/}}
+    {{/*<span class="liked-num">{% get_like_count comment %}</span>*/}}
+        {{/*<a href="javascript:reply({{ comment.pk }});">回复</a>*/}}
+{{/*</div>*/}}
+
+
+    {{/*{% for reply in comment.root_comment.all %}*/}}
+{{/*<div class="reply">*/}}
+{{/*<span>{{ reply.user.get_nickname_or_username }}</span>*/}}
+{{/*<span>({{ reply.comment_time|date:'Y-m-d H:i:s' }})</span>*/}}
+    {{/*<span> 回复：</span>*/}}
+{{/*<span>{{ reply.reply_to.get_nickname_or_username }}</span>*/}}
+        {{/*<div id="comment_{{ reply.pk }}">{{ reply.text|safe }}</div>*/}}
+        {{/*<div class="like" onclick="likeChange(this, '{% get_content_type reply %}', {{ reply.pk }})">*/}}
+    {{/*<span class="glyphicon glyphicon-thumbs-up {% get_like_status reply %}"></span>*/}}
+    {{/*<span class="liked-num">{% get_like_count reply %}</span>*/}}
+        {{/*<a href="javascript:reply({{ reply.pk }});">回复</a>*/}}
+{{/*</div>*/}}
+
+{{/*</div>*/}}
+    {{/*{% endfor %}*/}}
+{{/*</div>*/}}
+    {{/*{% empty %}*/}}
+    {{/*<span id="no_comment">暂无评论</span>*/}}
+    {{/*{% endfor %}*/}}
+{{/*</div>*/}}
+{{/*</div>*/}}
+{{/*</div>*/}}
+{{/*</div>*/}}
+
+</div>
+
+<div class="col-md-3 col-xs-12 blog-border">
+<div class="side-list">
+    <h4>
+        <span class="glyphicon glyphicon-book"></span>
+        随机推荐
+    </h4>
+<ul>
+{{range .randomblog}}
+<li>
+        <a href="#">
+{{ .title }}
+</a>
+</li>
+{{else}}
+
+{{end}}
+</ul>
+</div>
+
+<div class="side-list">
+    <h4>
+        <span class="glyphicon glyphicon-book"></span>
+        猜你喜欢
+    </h4>
+<ul id="like_blogs_list">
+{{range .randomblog}}
+<li>
+<a href="#">
+{{ .title }}
+</a>
+</li>
+{{else}}
+
+{{end}}
+</ul>
+</div>
+</div>
+</div>
+{{template "blog/foot.html" .}}
+</body>
+</html>
